@@ -8,7 +8,7 @@ const validate = (schema: ZodSchema) => {
       schema.parse(req.body);
       next();
     } catch (error: any) {
-      res.status(400).json({ message: error.errors });
+       res.status(400).json({ message: error.errors });
     }
   };
 };
