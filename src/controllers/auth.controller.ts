@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-// import { registerUser, loginUser } from '../services/auth.service';
+import { registerUser, loginUser } from '../services/auth.service';
 
-export const signup = async (req: Request, res: Response) => {
+export const signup = async (req: Request, res: Response): Promise<void> => {
   try {
     const user = await registerUser(req.body);
     res.status(201).json({
@@ -16,7 +16,7 @@ export const signup = async (req: Request, res: Response) => {
   }
 };
 
-export const login = async (req: Request, res: Response) => {
+export const login = async (req: Request, res: Response): Promise<void> => {
   try {
     const token = await loginUser(req.body);
     res.status(200).json({

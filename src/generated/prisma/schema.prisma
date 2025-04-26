@@ -68,7 +68,7 @@ model Follows {
   followingId String
   createdAt   DateTime @default(now())
 
-  @@unique([followerId, followingId]) // Prevent following same person twice
+  @@unique([followerId, followingId]) // Prevents following same person twice
 }
 
 model Message {
